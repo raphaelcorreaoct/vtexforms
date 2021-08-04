@@ -2,5 +2,11 @@
   "name": "vtexform",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "author": {
+    "name": "Raphael Corrêa",
+    "email": "raphael.correa.b@gmail.com",
+    "url": "https://raphaelcorrea.dev/"
+  },
+  "keywords": ["vtex", "Ecommerce vtex", "Form vtex", "vtex master data", "javascript", "jquery"]
 }

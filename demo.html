@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="meu-form" entity="CL">
+      <label for="name"> Nome </label>
+      <input name="name" id="name" required />
+
+      <label for="mail"> E-mail </label>
+      <input name="email" id="email" required />
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script src="https://code.jquery.com/git/jquery-3.x-git.min.js"></script>
+    <script src="./vtex-form.js"></script>
+
+    <script>
+      $("#meu-form").vtexMasterDataForm({
+        success: function () {
+          alert("DEU TUDO CERTO!");
+        },
+        error: function () {
+          alert("Ops!! Algo deu errado!");
+        },
+      });
+    </script>
+  </body>
+</html>
