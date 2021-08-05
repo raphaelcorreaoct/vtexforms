@@ -54,10 +54,10 @@ $("#meu-form").vtexMasterDataForm({
 
 ---
 
-<a href="https://blog.rocketseat.com.br/author/Raphael%20Corrêa/">
+<a href="https://raphaelcorrea.dev/">
  <img style="border-radius: 50%;" src="https://raphaelcorrea.dev/assets/ProfilePhoto.png" width="100px;" alt=""/>
  <br />
- <sub><b>Raphael Corrêa</b></sub></a> <a href="https://blog.rocketseat.com.br/author/Raphael%20Corrêa//" title="Rocketseat">🚀</a>
+ <sub><b>Raphael Corrêa</b></sub></a> <a href="https://raphaelcorrea.dev/" title="Rocketseat">🚀</a>
 
 Feito com ❤️ por Raphael Corrêa 👋🏽 Entre em contato!
 
