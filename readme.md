@@ -34,10 +34,10 @@ $("#meu-form").vtexMasterDataForm({
   // Executa quando um campo não passa na validação
   onValidateError: null,
 
-  // Executa quando finaliza a requisição Ajaxa com sucesso
+  // Executa quando finaliza a requisição Ajax com sucesso
   success: function (response) {},
 
-  // Executa quando finaliza a requisição Ajaxa com error
+  // Executa quando finaliza a requisição Ajax com error
   error: function (error) {},
 
   // Função opcional para fazer verificações de campos específicos. Deve retornar um boolean
