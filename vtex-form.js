@@ -1,44 +1,37 @@
 (function ($) {
   $.fn.extend({
-    vtexMasterDataForm: function (opt) {
-      const options = {
-        onValidateError: null,
-        success: function () {},
-        error: function () {},
-        validate: function () {
-          return true;
-        },
-        ignoreValidates: false,
-        ...opt,
-      };
-
+    vtexMasterDataForm: function (options) {
       const $form = $(this);
       const dataEntity = $form.attr("entity");
       const URL = `/api/dataentities/${dataEntity}/documents/`;
-      const dataForm = {};
+      let dataForm = {};
 
       if (!dataEntity) throw "Erro: Atributo 'entity' é undefined";
 
       $form.on("submit", function (event) {
         event.preventDefault();
 
-        $form.find("input, textarea").each(function () {
-          const name = $(this).attr("name");
-          const value = $(this).val() !== "" ? $(this).val() : null;
-          dataForm[name] = value;
-        });
+        if (!options.getFields) {
+          $form.find("input, textarea").each(function () {
+            const name = $(this).attr("name");
+            const value = $(this).val() !== "" ? $(this).val() : null;
+            dataForm[name] = value;
+          });
 
-        $form.find("input:checked").each(function () {
-          const name = $(this).attr("name");
-          const value = $(this).val() !== "" ? $(this).val() : null;
-          dataForm[name] = value;
-        });
+          $form.find("input:checked").each(function () {
+            const name = $(this).attr("name");
+            const value = $(this).val() !== "" ? $(this).val() : null;
+            dataForm[name] = value;
+          });
 
-        $form.find("select").each(function () {
-          const name = $(this).attr("name");
-          const value = $(this).find("option:selected").val();
-          dataForm[name] = value;
-        });
+          $form.find("select").each(function () {
+            const name = $(this).attr("name");
+            const value = $(this).find("option:selected").val();
+            dataForm[name] = value;
+          });
+        } else {
+          dataForm = options.getFields();
+        }
 
         if (
           (options.validate && options.validate(dataForm)) ||
